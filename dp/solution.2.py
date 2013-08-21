@@ -2,7 +2,7 @@
 #coding:utf-8
 #
 # Given n types of coin denominations: v[n],
-#   let M[I] be minimum number of coins needed for making change for an 
+#   let M[I] be minimum number of coins needed to make change for an 
 #   amount of money I, then
 # M[I] = min{M[I - v[k]]} + 1, where v[k] <= I, k = 1..n
 # 
