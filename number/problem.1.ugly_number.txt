@@ -1,4 +1,4 @@
 Ugly numbers are numbers whose only prime factors are 2, 3 or 5. The sequence 
 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, ... 
 shows the first 10 ugly numbers. By convention, 1 is included. 
-Given the integer n,write a program to find and print the n'th ugly number. '
+Given the integer n,write a program to find and print the n'th ugly number.
