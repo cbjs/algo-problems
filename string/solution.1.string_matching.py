@@ -3,20 +3,29 @@
 
 def kmp(P, T):
     # calc longest proper prefix table
-    pi = [0] * len(P)
+    pi = [-1] * len(P)
+    k = -1
+    for i in range(1, len(P)):
+        while k >= 0 and P[i] != P[k + 1]:
+            k = pi[k]
+        if P[i] == P[k + 1]:
+            k = k + 1
+        pi[i] = k
+
+    print pi
 
     # string matching
-    q = 0
-    i = 0
-    while i < len(T):
-        if P[q] == T[i]:
-            if q == len(P) - 1:
-                print "find at index: %d" % (i - q)
-                q = pi[q]
-            q += 1
-            i += 1
-        else:
-            if q > 0:
-                q = pi[q - 1] + 1
-            else:
-                i += 1
+    l = -1   # index of Pattern already matched to
+    for i in range(len(T)):
+        while l >=0 and T[i] != P[l + 1]:
+            l = pi[l]
+        if T[i] == P[l + 1]:
+            l += 1
+        if l == len(P) - 1:
+            print "found at index:%d" % (i - l)
+            l = pi[l]
+
+if __name__ == '__main__':
+    P = 'ababc'
+    T = 'cdabaeababcdababcdef'
+    kmp(P, T)
