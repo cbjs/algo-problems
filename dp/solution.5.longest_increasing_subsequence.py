@@ -24,19 +24,30 @@ def binary_search(arr, inds, ele, start, end):
         return binary_search(arr, inds, ele, mid, end)
 
 def longest_increasing_subsequence(arr):
+    track = [-1] * len(arr)
     inds = [0] * len(arr)
     max_len = 1
+    # print "i, arr[i], index, inds, track"
     for i in range(1, len(arr)):
         index = binary_search(arr, inds, arr[i], 0, max_len)
-        if index < max_len - 1:
+        if index < max_len - 1: # index == -1 or index >= 0 and index < max_len - 1 
             if arr[inds[index + 1]] > arr[i]:
                 inds[index + 1] = i
         else: # index == max_len - 1
             max_len += 1
             inds[index + 1] = i
 
+        if index != -1:
+            track[i] = inds[index]
+        # print i, arr[i], index, inds, track
+
     print "max length:%d" % max_len
+    max_index = inds[max_len - 1]
+    print arr[max_index],
+    while track[max_index] != -1:
+        max_index = track[max_index]
+        print arr[max_index],
 
 if __name__ == '__main__':
-    arr = [12, 1, 2, 3, 7, -14, -12, -10, 4, 5]
+    arr = [-12, 1, 2, 3, 7, -14, -12, -10, 4, 5]
     longest_increasing_subsequence(arr)
