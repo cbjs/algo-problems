@@ -1,2 +1,4 @@
 You have a set of n integers each in the range 0 ... K. 
 Partition these integers into two subsets such that you minimize |S1 - S2|, where S1 and S2 denote the sums of the elements in each of the two subsets.
+
+假设有2n个数，如果要求两个子集数目相等(同为n), 且使|S1 - S2|最小，如何做?
