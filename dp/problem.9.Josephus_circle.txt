@@ -1,0 +1,10 @@
+There are people standing in a circle waiting to be executed. 
+The counting out begins at some point in the circle and proceeds around the circle in a fixed direction. 
+In each step, a certain number of people are skipped and the next person is executed. 
+The elimination proceeds around the circle (which is becoming smaller and smaller as the executed people are removed), until only the last person remains, who is given freedom.
+
+n个人(编号1..n)站成一个圈, 先把第m个人枪毙，然后从第m+1个人开始报数，枪毙第k个人，剩下的人继续从1报数, 枪毙第k个人直至剩下最后一个人。
+求活下来的人的编号。
+
+输入n, m, k。求最后活下来的人的编号。
+
