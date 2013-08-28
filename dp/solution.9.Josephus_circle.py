@@ -26,6 +26,8 @@ import random
 
 def solution(n, m, k):
     s = 0
+
+    # from 2 to n - 1
     for i in range(2, n):
         s = (s + k) % i
 
