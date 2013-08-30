@@ -1,0 +1,6 @@
+Fibonacci sequence F(n) is defined by recurrence relation,
+    F(n) = F(n - 1) + F(n - 2)
+with seed values,
+     F(0) = 0, F(1) = 1
+
+Given integer n, calculate F(n) as quick as possible.
