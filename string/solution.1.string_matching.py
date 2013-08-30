@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding:utf-8
+#   KMP string matching algorithm
 
 def kmp(P, T):
     # calc longest proper prefix table
