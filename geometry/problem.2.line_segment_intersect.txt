@@ -1,0 +1,5 @@
+判断平面上两条线段是否相交。
+
+输入: 线段AB, A(xa, ya)、B(xb, yb)
+      线段CD, C(xc, yc)、D(xc, yc)
+输出: True or False
