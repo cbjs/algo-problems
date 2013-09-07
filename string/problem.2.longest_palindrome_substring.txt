@@ -1,0 +1,8 @@
+最长回文子串LPS
+
+bananas的LPS为"anana"
+cabbad的LPS为"abba"
+
+给定字符串，找出其LPS的长度。
+找出一个LPS。
+找到所有LPS。
