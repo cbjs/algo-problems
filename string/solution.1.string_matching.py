@@ -27,6 +27,6 @@ def kmp(P, T):
             l = pi[l]
 
 if __name__ == '__main__':
-    P = 'ababc'
-    T = 'cdabaeababcdababcdef'
+    P = 'abcbabab'
+    T = 'cdababcbababdababcbababef'
     kmp(P, T)

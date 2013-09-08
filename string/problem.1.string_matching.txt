@@ -2,3 +2,9 @@
 文本: T[n]
 
 搜索文本T中, 模式串P出现的位置
+
+KMP
+BM
+EXTEND-KMP
+suffix-tree
+suffix-array

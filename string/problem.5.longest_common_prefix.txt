@@ -1,0 +1,4 @@
+Given a string S of length n, create an array Z where Z[i] is the length of the longest substring starting from S[i] which is also a prefix of S.
+
+给定长度为n的字符串S, 计算Z[i] 0 <= i < n, Z[i]为从S[i]开始的最长前缀子串。
+例: S = abcdabceg  Z[4] = 3, i = 4时, 最长前缀子串为abc
