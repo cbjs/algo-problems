@@ -31,8 +31,11 @@ if __name__ == '__main__':
     arr = [1, 2, 0]
     print "solution of %r: %d" % (arr, solution(arr))
 
-    arr = [7, 9, -1, -2, 1, 3, 9]
+    arr = [7, 1, 3, 9, 9, -1, -2]
     print "solution of %r: %d" % (arr, solution(arr))
 
     arr = [1, 2, 3, 4]
+    print "solution of %r: %d" % (arr, solution(arr))
+
+    arr = [3, 3, 3, 3]
     print "solution of %r: %d" % (arr, solution(arr))
