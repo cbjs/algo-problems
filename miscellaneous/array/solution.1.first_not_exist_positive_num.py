@@ -22,9 +22,14 @@ def solution(arr):
         if arr[i] != i + 1:
             return i + 1
 
+    return len(arr) + 1
+
 if __name__ == '__main__':
     arr = [1, 2, 0]
     print "solution of %r: %d" % (arr, solution(arr))
 
     arr = [7, 9, -1, -2, 1, 3, 9]
+    print "solution of %r: %d" % (arr, solution(arr))
+
+    arr = [1, 2, 3, 4]
     print "solution of %r: %d" % (arr, solution(arr))
