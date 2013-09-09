@@ -9,13 +9,16 @@ def solution(arr):
     """
     n = len(arr)
     # 1st scan
-    for i in range(n):
+    i = 0
+    while i < n:
         k = arr[i]
         if k >= 1 and k <= n:
             if arr[k - 1] != k:
                 tmp = arr[k - 1]
                 arr[k - 1] = k
                 arr[i] = tmp
+                continue
+        i += 1
 
     # 2nd scan
     for i in range(n):
