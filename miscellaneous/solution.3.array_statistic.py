@@ -8,7 +8,6 @@
 #       三遍扫描，1) a[i] = a[i] * n
 #                 2) a[a[i] / n - 1] ++
 #                 3) a[i] % n 为(i + 1)出现的次数
-
 def solution_one(arr):
     i = 0
     while i < len(arr):
