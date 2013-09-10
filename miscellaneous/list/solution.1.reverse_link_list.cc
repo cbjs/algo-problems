@@ -17,7 +17,21 @@ typedef struct _Node{
     _Node* n;
 } Node;
 
-Node* reverse()
+Node* reverse(Node* head) {
+    if (!head) return NULL;
+
+    Node* new_head = NULL;
+    Node* old_head = head;
+
+    while (old_head) {
+        Node* tmp = old_head->n;
+        old_head->n = new_head;
+        new_head = old_head;
+        old_head = tmp;
+    }
+
+    return new_head;
+}
 
 int main(int argc, char *argv[])
 {
@@ -29,5 +43,9 @@ int main(int argc, char *argv[])
         }
     }
     nodes[0].print();
+
+    Node* reversed = reverse(&(nodes[0]));
+    reversed->print();
+
     return 0;
 }
