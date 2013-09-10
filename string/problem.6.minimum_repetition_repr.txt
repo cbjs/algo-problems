@@ -1,0 +1,6 @@
+String's Minimum Repetition Reprentation
+字符串的循环最小表示
+
+字符串bcad, 的循环表示有cadb, adbc, dbca, bcad, 其中按字典序最小的循环最小表示为adbc。
+
+给定字符串s, 求最小循环表示。

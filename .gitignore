@@ -2,6 +2,10 @@
 
 # C extensions
 *.so
+*.out
+
+# vim
+*.swp
 
 # Packages
 *.egg
