@@ -1,0 +1,8 @@
+循环字符串，比如S = "abcabcabc" 
+如果用乘法表示字符串拼接，S可以定义为"abc"的三次方。 "abcabcabc" = "abc"^3
+给定字符串S，求最大的n和最短的子串s, 使得 S = s^n
+
+例:
+    S = "abcabcabc", s = "abc" n = 3
+    S = "cde", s = "cde" n = 1
+    S = "fffff" s = "f" n = 5
