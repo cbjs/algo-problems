@@ -20,7 +20,7 @@ char* remove_extra_spaces(char* str) {
   }
 
   // strip spaces at the end
-  if (*(i-1) == ' ') *(i-1) = '\0';
+  if (i != str && *(i-1) == ' ') *(i-1) = '\0';
   else *i = '\0';
   return str;
 }
