@@ -1,0 +1,4 @@
+A “dealer” produces a sequence s1 · · · sn of “cards,” face up, where each card si has a value vi. Then two players take turns picking a card from the sequence, but can only pick the first or the last card of the (remaining) sequence. The goal is to collect cards of largest total value. (For example, you can think of the cards as bills of different denominations.)
+    Assume n is even.
+    (a) Show a sequence of cards such that it is not optimal for the first player to start by picking up the available card of larger value. That is, the natural greedy strategy is suboptimal.
+    (b) Give an O(n^2) algorithm to compute an optimal strategy for the first player. Given the initial sequence, your algorithm should precompute in O(n^2) time some information, and then the first player should be able to make each move optimally in O(1) time by looking up the precomputed information.
