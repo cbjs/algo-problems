@@ -14,7 +14,7 @@ def solution(cards):
                                B选择c3, 剩下c1, c2。A可以获得价值c4 + max(c1, c2)
                 同理，A选择c4时可以获得最小价值last_choice, c4 + min(max(c2, c3), max(c1, c2))
 
-                玩家A应该选择最大最小价值，若first_choice大于last_choice时，选择c1，否则选c2
+                玩家A应该选择最大最小价值，若first_choice大于last_choice时，选择c1，否则选c4
 
         动规解:
         cards[i, j]表示cards中从i到j(闭区间)的子序列。
