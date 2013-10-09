@@ -25,14 +25,20 @@ def power_of_string(string):
         next[i] = k
 
     l = n - next[n - 1]
-    m = n / l
-    print "power_of_string: %s = %s ^ %d" % (string, string[:l], m)
+    if n % l == 0:
+        m = n / l
+        print "power_of_string: %s = %s ^ %d" % (string, string[:l], m)
+    else:
+        print "power_of_string: %s = %s ^ 1" % (string, string)
 
 if __name__ == '__main__':
     string = "abcabcabc"
     power_of_string(string)
 
     string = "cdefg"
+    power_of_string(string)
+
+    string = "ababa"
     power_of_string(string)
 
     string = "fffffff"
