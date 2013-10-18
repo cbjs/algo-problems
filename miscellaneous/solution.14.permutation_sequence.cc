@@ -24,6 +24,7 @@ string getPermutation(int n, int k) {
                 a -= 1;
             }
         }
+        if (!k) break;
     }
     return string(chars, chars + n);
 }
