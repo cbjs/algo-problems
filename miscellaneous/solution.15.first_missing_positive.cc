@@ -1,37 +1,24 @@
 class Solution {
 public:
     int firstMissingPositive(int A[], int n) {
-        int nnp = 0; // num of non-positive numbers
         int i = 0;
         while (i < n) {
-            // reach the end
-            if (nnp + i == n) break;
-
-            // non-positive number, put in the end
-            if (A[i] <= 0) {
-                A[i] = A[n - 1 - nnp];
-                A[n - 1 - nnp] = -1;
-                ++nnp;
-                continue;
-            }
-
-            // positive number
-            // check if it's in the right place
-            int j = A[i] - 1;
-            if (j == i) {
+            // non-positive number or positive in the right place
+            if (A[i] <= 0 || A[i] - 1 == i) {
                 i++;
                 continue;
             }
 
-            // swap it to its right place,
-            if (j < n - nnp && A[j] != j + 1) {
+            // swap to its right place
+            int j = A[i] - 1;
+            if (j < n && A[j] != j + 1) {
                 int t = A[j];
                 A[j] = A[i];
                 A[i] = t;
                 continue;
             }
 
-            // no place to go, place a flag here
+            // no place to go
             A[i] = -1;
             i++;
         }
