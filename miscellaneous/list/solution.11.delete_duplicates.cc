@@ -13,13 +13,14 @@ ListNode *deleteDuplicates(ListNode *head) {
     ListNode *p = head, *q = nullptr, *prev = nullptr;
     head = nullptr;
     while (p) {
+        // check if p has duplicates
         q = p->next;
         while (q && q->val == p->val) {
             ListNode *t = q->next;
             delete q;
             q = t;
         }
-        if (q == p->next) {
+        if (q == p->next) {  // has no duplicates
             if (!prev) {
                 head = p;
                 prev = p;
@@ -27,6 +28,9 @@ ListNode *deleteDuplicates(ListNode *head) {
                 prev->next = p;
                 prev = p;
             }
+        } else {
+          // has duplicates
+          delete p;
         }
         p = q;
     }
