@@ -1,41 +1,42 @@
-#include <iostream>
-
-using namespace std;
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     ListNode *reverseBetween(ListNode *head, int m, int n) {
-        if (!head) return nullptr;
-        ListNode *pre = nullptr, *p = head;
-        int i = 1;
-        while (p && i++ < m) {
-            pre = p;
-            p = p->next;
-        }
+       if (m >= n) return head;
 
-        ListNode *t = nullptr, *last = p;
-        while (p && i++ <= n) {
-            ListNode *q = p->next;
-            p->next = t;
-            t = p;
-            p = q;
-        }
+       ListNode *prev = nullptr, *p = head, *new_head = nullptr, *new_tail = nullptr;
+       // find start node, keep track of previous node
+       int i = 1;
+       while (p && i < m) {
+           prev = p;
+           p = p->next;
+           i++;
+       }
 
-        if (last != p) last->next = p;
+       // start reversing, keep track of new tail and head of the reversed list
+       new_tail = p;
+       while (p && i <= n) {
+           ListNode *q = p->next;
+           p->next = new_head;
+           new_head = p;
+           p = q;
+           i++;
+       }
 
-        if (pre) pre->next = t;
-        return head;
+       // concate three parts
+       new_tail->next = p;
+       if (prev) {
+           prev->next = new_head;
+           return head;
+       } else {
+           return new_head;
+       }
     }
 };
-
-int main(int argc, char *argv[])
-{
-    ListNode n1(3);
-    Solution().reverseBetween(&n1, 1, 1);
-    return 0;
-}
