@@ -15,7 +15,14 @@ public:
                 l = m + 1;
             else
                 r = m - 1;
-        } else l++;
+        } else {
+            if (A[l] == A[r]) {
+              l++;
+              r--;
+            } else {
+              l = m + 1;
+            }
+        }
     }
     return false;
 }
