@@ -23,4 +23,4 @@ Sample testcase:
   6 
   64 
 Explanation: 
-  For the first test case, s = "011". There are 32 = 9 valid expressions that can be formed from this string, namely {0+11, 0-11, 0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1, 011} . Out of these 9 expressions, only the following 6 of them evaluate to a Walprime: {0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1}.
+  For the first test case, s = "011". There are 3^2 = 9 valid expressions that can be formed from this string, namely {0+11, 0-11, 0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1, 011} . Out of these 9 expressions, only the following 6 of them evaluate to a Walprime: {0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1}.
