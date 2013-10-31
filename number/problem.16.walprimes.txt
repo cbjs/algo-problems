@@ -1,0 +1,26 @@
+Engineers at Google have decided to call any integer (+ve, -ve or 0) that is divisible by at least one of the single digit primes (2, 3, 5, 7) as Walprimes. Thus -21, -30, 0, 5, 14 etc are Walprimes, while -121, 1, 143 etc. are not Walprimes. 
+Now, consider a n-digit integer d1d2d3..dn. Between any 2 consecutive digits you can place either a (+) sign, a (-) sign or nothing. So, there are 3^(n-1) different expressions that can be formed from it. Some of the expressions so formed may evaluate to a Walprime. 
+For example, consider the 6 digit integer 123456: 1 + 234 - 5 + 6 = 236, which is a Walprime, but 123 + 4 - 56 = 71, which is not a Walprime. 
+
+Your task is to write a program to find the no. of expressions (out of the possible 3^(n-1) expressions) that evaluate to a Walprime, for a given input.
+
+Note that leading zeroes are valid. For example, if the input is 1202004, it can be split as 12 + 020 - 04 etc. Also, the input itself can contain leading zeroes. 
+
+Input format: (Read from stdin) 
+  The first line of input contains a single integer 'T' denoting the no. of test cases.  
+  Each of the following 'T' lines contain a single string 's' (of length 'n') denoting an input for which you need to find the no. of valid expressions evaluating to a Walprime. 
+
+Output format: (Write to stdout) 
+  Output exactly 'T' integers (one per line), where the ith line denotes the no.  of valid expressions that evaluate to a Walprime for the ith input string.
+  Since the output can be large, print all the quantities modulo 1000000007.
+
+Sample testcase: 
+  Input: 
+  2 
+  011 
+  12345 
+  Output: 
+  6 
+  64 
+Explanation: 
+  For the first test case, s = "011". There are 32 = 9 valid expressions that can be formed from this string, namely {0+11, 0-11, 0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1, 011} . Out of these 9 expressions, only the following 6 of them evaluate to a Walprime: {0+1+1, 0+1-1, 0-1+1, 0-1-1, 01+1, 01-1}.
