@@ -40,5 +40,8 @@ int main(int argc, const char *argv[])
 
   s = "12345";
   cout << s << " : " << walprimes(s) << endl;
+
+  s = "1234567";
+  cout << s << " : " << walprimes(s) << endl;
   return 0;
 }
