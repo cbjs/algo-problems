@@ -1,15 +1,15 @@
 class Solution {
 public:
     int singleNumberDirect(int A[], int n) {
-      int result = 0, m = sizeof(int) * 8;
+      int one = 0, m = sizeof(int) * 8;
       for (int i = 0; i < m; i++) {
         int cur = 0;
         for (int j = 0; j < n; j++) {
           cur += (A[j] >> i) & 0x01;
         }
-        result |= (cur % 3) << i;
+        one |= (cur % 3) << i;
       }
-      return result;
+      return one;
     }
 
     int singleNumber(int A[], int n) {
