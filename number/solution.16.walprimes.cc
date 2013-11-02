@@ -4,8 +4,8 @@
 using namespace std;
 
 int F(const string& s, int p) {
-  int n = s.size(), remain[n][p];
-  memset(remain, 0, sizeof(remain));
+  int n = s.size(), R[n][p];
+  memset(R, 0, sizeof(R));
 
   for (int i = n - 1; i >= 0; i--) {
     int first = s[i] - '0';
@@ -13,17 +13,17 @@ int F(const string& s, int p) {
     for (int k = i + 1; k < n; k++) {
       for (int j = 0; j < p; j++) {
         // -1 % 2 = -1 replaced with (2 + -1 % 2) % 2 = 1
-        remain[i][j] += remain[k][(p + (j - first) % p) % p];
-        remain[i][j] += remain[k][(p + (first - j) % p) % p];
+        R[i][j] += R[k][(p + (j - first) % p) % p];
+        R[i][j] += R[k][(p + (first - j) % p) % p];
       }
 
       first = 10 * first + s[k] - '0';
     }
 
-    remain[i][first % p] += 1;
+    R[i][first % p] += 1;
   }
 
-  return remain[0][0];
+  return R[0][0];
 }
 
 int walprimes(const string& s) {
