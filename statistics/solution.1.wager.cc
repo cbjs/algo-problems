@@ -2,16 +2,16 @@
 
 using namespace std;
 
-int min_wager(int my_score, int scores[], int wagers[]) {
+int min_wager(int my_score, int scores[], int wagers[], int n) {
   int min_wager = 0, max_prob = 0;
   for (int w = 0; w <= my_score; w++) {
     int cur_prob = 0;
 
-    for (int r = 0; r < 16; r++) {
+    for (int r = 0; r < (2 << n); r++) {
       int my_last_score = my_score + ((r & 0x08) ? w : -w);
 
       int i = 0;
-      while (i < 3) {
+      while (i < n - 1) {
         int other_score = scores[i] + wagers[i] * (((r >> 1) & 0x1) ? 1 : -1);
         if (my_last_score <= other_score) break;
         i += 1;
@@ -36,7 +36,7 @@ int main(int argc, const char *argv[])
   int wagers[] = {5, 3, 4};
   for (int i = 0; i < 17; i++) {
     cout << "my_score:" << i << endl;
-    cout << "my min_wager:" << min_wager(i, scores, wagers) << endl;
+    cout << "my min_wager:" << min_wager(i, scores, wagers, 4) << endl;
     cout << endl;
   }
   return 0;
