@@ -8,16 +8,16 @@ int min_wager(int my_score, int scores[], int wagers[], int n) {
     int cur_prob = 0;
 
     for (int r = 0; r < (2 << n); r++) {
-      int my_last_score = my_score + ((r & 0x08) ? w : -w);
+      int my_last_score = my_score + (((r >> n - 1) & 0x01) ? w : -w);
 
       int i = 0;
       while (i < n - 1) {
-        int other_score = scores[i] + wagers[i] * (((r >> 1) & 0x1) ? 1 : -1);
+        int other_score = scores[i] + wagers[i] * (((r >> i) & 0x01) ? 1 : -1);
         if (my_last_score <= other_score) break;
         i += 1;
       }
 
-      if (i == 3) cur_prob += 1;
+      if (i == n - 1) cur_prob += 1;
     }
 
     if (cur_prob > max_prob) {
