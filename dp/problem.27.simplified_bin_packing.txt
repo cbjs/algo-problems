@@ -1,0 +1,1 @@
+You have n1 items of size s1, n2 items of size s2, and n3 items of size s3. You'd like to pack all of these items into bins each of capacity C, such that the total number of bins used is minimized.
