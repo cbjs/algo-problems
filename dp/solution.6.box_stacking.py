@@ -7,7 +7,7 @@
 #       3. 每个盒子有3个面积: height * width, height * depth, width * depth
 #
 #   问题转换:
-#       n个类型的盒子，3n个面积，从小到大排序，       
+#       n个类型的盒子，3n个面积，从大到小排序，求最长递减子序列
 #
 
 def solution(boxes):
