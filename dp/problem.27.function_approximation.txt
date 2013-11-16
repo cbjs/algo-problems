@@ -1,0 +1,5 @@
+Assume a function f(x) generated a sequence of n points in the plane (xi, yi). Given an integer k, we choose a subset of k + 1 points and order them according to increasing x-coordinate. This subset must include the first point (x1,y1) (smallest x-coordinate) and the last point (xn,yn) (largest x-coordinate). We define the function g(x) as the straight line segments connecting each point to the next point in the set so g(x) consists of k line segments. The error is then defined as
+
+  e = sum(yi − g(xi))^2, i from 1 to n.
+
+Give an algorithm that takes the n points and k as input and minimizes the error.

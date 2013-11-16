@@ -1,0 +1,2 @@
+Suppose you have one machine and n jobs, a1,...,an. Each job aj has processing time tj, profit pj, and deadline dj. The machine can only process one job at a time and that job must run uninterruptedly until completion. If job aj is completed by deadline dj , you receive profit pj, but if it is completed after, you receive nothing. Assuming all processing times are integers between 1 and n and dj ≥ tj for all jobs, give an algorithm for computing the maximum profit you can make.
+

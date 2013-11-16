@@ -1,0 +1,1 @@
+You are given a set of points (xi,yi) in a two dimensional plane. You start at the point with the lowest x coordinate and must move strictly right until you reach the point with the highest x coordinate, after which you must move strictly left until you return to the starting point. Give an algorithm for determining the shortest distance you can travel.
