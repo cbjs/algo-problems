@@ -55,12 +55,14 @@ int main(int argc, const char *argv[])
 {
   // generate random testcase
   vector<vector<int> > matrix;
-  int n = 5;
+  int n = 10;
   matrix.resize(n, vector<int>(n));
-  srand(time(NULL));
+  //srand(time(NULL));
+  srand(0);
   for (int i = 0; i < n; ++i) {
       for (int j = 0; j < i; ++j) {
-          int v = rand() % 10 + 1;
+          //int v = rand() % 10 + 1;
+          int v = rand() % 1000;
           matrix[i][j] = matrix[j][i] = v;
       }
   }
