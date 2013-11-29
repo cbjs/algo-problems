@@ -11,7 +11,7 @@ num_map = {
     u'七': 7,
     u'八': 8,
     u'九': 9,
-};
+}
 
 unit_set = [
     (u'亿', 10 ** 8),
@@ -20,23 +20,6 @@ unit_set = [
     (u'百', 10 ** 2),
     (u'十', 10),
 ]
-
-unit_map = [
-    u'亿': 10 ** 8,
-    u'万': 10 ** 4,
-    u'千': 10 ** 3,
-    u'百': 10 ** 2,
-    u'十': 10,
-]
-
-def trans2(big):
-    i = 0
-    result = 0
-    while i < len(big):
-        if not big[i] in num_map:
-            return -1
-    
-    return result
 
 def trans(big):
     for unit in unit_set:
@@ -89,6 +72,9 @@ if __name__ == '__main__':
     print '%s = %d' % (big, trans(big));
 
     big = u'八亿'
+    print '%s = %d' % (big, trans(big));
+
+    big = u'八百亿'
     print '%s = %d' % (big, trans(big));
 
     big = u'八亿零'
