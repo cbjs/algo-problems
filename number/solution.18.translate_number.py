@@ -31,7 +31,7 @@ def trans(big):
                 return -1
 
             high = trans(big[0: i])
-            if high == -1 or high > v:
+            if high == -1:
                 return - 1
 
             if i + 1 < len(big) and big[i + 1] == u'零':
@@ -77,10 +77,16 @@ if __name__ == '__main__':
     big = u'八百亿'
     print '%s = %d' % (big, trans(big));
 
-    big = u'八亿零'
+    big = u'八亿零一'
     print '%s = %d' % (big, trans(big));
 
-    big = u'八亿零一'
+    big = u'八百零八十'
+    print '%s = %d' % (big, trans(big));
+
+    big = u'八百八百'
+    print '%s = %d' % (big, trans(big));
+
+    big = u'八亿零'
     print '%s = %d' % (big, trans(big));
 
     big = u'八亿零零一'
