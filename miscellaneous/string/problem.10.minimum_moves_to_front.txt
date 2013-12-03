@@ -1,0 +1,12 @@
+Given two strings A and B of the same length, in single turn you can choose any character from A and move it to the begining of the string A. Return the minimum turns needed to tranform A into B, if it's impossible, return -1.
+
+EXAMPLES
+"ABC"
+"CBA"
+Returns: 2
+
+The optimal solution is to make two turns. On the first turn, choose character 'B' and obtain string "BAC". On the second turn, choose character 'C' and obtain "CBA".
+
+"A"
+"B"
+Returns: -1
