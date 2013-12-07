@@ -1,0 +1,8 @@
+For given set of natural number, suppose we can negate some number.  Find what all number we should negate such that sum of all number (after negating some number) is zero. 
+
+eg: 
+{1,2,3} return {-1, -2}, 
+
+{1,2,3,4} return {-1,-4} or {-2,-3}. 
+
+1st check if such number in given set exist or not. If not return empty array else return numbers.
