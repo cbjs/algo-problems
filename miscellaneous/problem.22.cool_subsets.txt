@@ -1,0 +1,8 @@
+Little Elephant from the Zoo of Lviv has a set S. The set S contains the integers 1, 2, 3, ..., N. He considers some non-empty subset of S cool if we can write down all elements of the subset by using each of the digits 0-9 at most once.
+
+Examples:
+The subsets {12,345,67890} and {47,109} are cool.
+The subset {147,342} is not cool because the digit 4 is used twice.
+The subset {404} is not cool for the same reason.
+
+You are given the int N. Let X be the total number of non-empty cool subsets of S. Return the value (X modulo 1,000,000,007).
