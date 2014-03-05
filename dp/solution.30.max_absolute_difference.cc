@@ -1,26 +1,26 @@
 #include <string.h>
-
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
 
-int maxAbsoluteDiff(int arr[], int n) {
-  if (0 == n)
-  {
-    return 0;
+void printArr(int arr[], int i, int j) {
+  for (int k = i; k <= j; k++) {
+    cout << arr[k] << ", ";
   }
-  else if (1 == n)
-  {
-    return arr[0];
-  }
+  cout << endl;
+}
+
+int maxAbsoluteDiff(int arr[], int n, int* a, int* b, int* c) {
+  if (0 == n) return 0;
+  if (1 == n) return arr[0];
 
   int lmin[n], lmax[n], lmini[n], lmaxi[n];
 
   memcpy(lmin, arr, n * sizeof(int));
   memcpy(lmax, arr, n * sizeof(int));
-  memcpy(lmini, 0, n * sizeof(int));
-  memcpy(lmaxi, 0, n * sizeof(int));
+  memset(lmini, 0, n * sizeof(int));
+  memset(lmaxi, 0, n * sizeof(int));
 
   for (int i = 1; i < n; i++) {
     lmini[i] = lmaxi[i] = i;
@@ -34,35 +34,39 @@ int maxAbsoluteDiff(int arr[], int n) {
     }
   }
 
-  int rmin = arr[n - 1], rmax = arr[n - 1], rmini = n - 1, rmaxi = n - 1;
-  for (int i = n - 2; i >= 0; i--) {
-    if (rmin < 0)
-    {
+  // init results
+  int max_abs = arr[0] - arr[1];
+  *a = 0, *b = 1, *c = 1;
+
+  int rmin = 0, rmax = 0, rmini = n, rmaxi = n;
+  for (int i = n - 1; i > 0; i--) {
+    if (rmin < 0) {
       rmin += arr[i];
-    }
-    if (rmax[i + 1] > 0)
-    {
-      rmax[i] += rmax[i + 1];
-    }
-  }
-
-
-  int l_m = arr[0];
-  int l_n = arr[0];
-  int max_abs = abs(arr[1] - arr[0]);
-  for (int i = 0; i < n-1; i++) {
-    if(lmax[i] > l_m)
-    {
-      l_m = lmax[i];
+    } else {
+      rmin = arr[i];
+      rmini = i;
     }
 
-    if(lmin[i] < l_n)
-    {
-      l_n = lmin[i];
+    if (lmax[i - 1] - rmin > max_abs) {
+      max_abs = lmax[i - 1] - rmin;
+      *a = lmaxi[i - 1];
+      *b = i;
+      *c = rmini;
     }
 
-    max_abs = max(abs(l_m - rmin[i+1]), max_abs);
-    max_abs = max(abs(l_n - rmax[i+1]), max_abs);
+    if (rmax > 0) {
+      rmax += arr[i];
+    } else {
+      rmax = arr[i];
+      rmaxi = i;
+    }
+
+    if (rmax - lmin[i - 1] > max_abs) {
+      max_abs = rmax - lmin[i - 1];
+      *a = lmini[i - 1];
+      *b = i;
+      *c = rmaxi;
+    }
   }
 
   return max_abs;
@@ -71,6 +75,13 @@ int maxAbsoluteDiff(int arr[], int n) {
 int main(int argc, char *argv[])
 {
   int arr[] = {2, -1, -2, 1, -4, 2, 8};
-  cout << maxAbsoluteDiff(arr, sizeof(arr) / sizeof(int));
+  int i, j, k;
+  int max_abs = maxAbsoluteDiff(arr, sizeof(arr) / sizeof(int), &i, &j, &k);
+
+  cout << "max abs: " << max_abs << endl;
+  cout << "left subarray: ";
+  printArr(arr, i, j - 1);
+  cout << "right subarray: ";
+  printArr(arr, j, k);
   return 0;
 }
